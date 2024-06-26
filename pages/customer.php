@@ -10,7 +10,7 @@ $DB = new DB();
         <form action="#" method="post" enctype="multipart/form-data">
             <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
                 <div class="md:block hidden">
-                    <img class="object-cover" src="../assets/vectors/client.png" alt="">
+                    <img class="object-cover" src="../assets/vectors/customer.png" alt="">
                 </div>
                 <div class="block">
                     <div class="sm:col-span-2">
