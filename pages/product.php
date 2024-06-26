@@ -2,7 +2,7 @@
     require 'sidebar.php';
 
 
-    require(__DIR__ . '/model/dbconnexion.php');
+    require '../model/dbconnexion.php';
     $DB = new DB();
 ?>
 
