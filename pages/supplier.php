@@ -1,6 +1,6 @@
 <?php
 require 'sidebar.php';
-require '../model/dbconnexion.php';
+require '../model/class_connexion.php';
 $DB = new DB();
 ?>
 
