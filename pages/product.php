@@ -54,7 +54,7 @@
                     Add product
                 </button>
                 <label class="text-sm font-medium text-gray-900 dark:text-white">
-                    <ion-icon name="images" class="w-12 h-12 mt-4 "></ion-icon>
+                    <ion-icon name="images" class="w-12 h-12 mt-4 opacity-25"></ion-icon>
                     <input name="image_produit" type="file" class="hidden cursor:pointer" />
                 </label>
             </div>
