@@ -1,7 +1,5 @@
 <?php
     require 'sidebar.php';
-
-
     require '../model/dbconnexion.php';
     $DB = new DB();
 ?>
@@ -49,14 +47,14 @@
             </div>
 
             <div class="flex space-x-4">
-                <button type="submit"
-                    class="items-center px-3 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white rounded-md bg-green-500 hover:bg-green-600">
-                    Add product
-                </button>
                 <label class="text-sm font-medium text-gray-900 dark:text-white">
                     <ion-icon name="images" class="w-12 h-12 mt-4 "></ion-icon>
                     <input name="image_produit" type="file" class="hidden cursor:pointer" />
                 </label>
+                <button name="submit_product" type="submit"
+                    class="items-center px-3 py-2 mt-4 sm:mt-6 text-sm font-medium text-center text-white rounded-md bg-green-500 hover:bg-green-600">
+                    Add product
+                </button>
             </div>
         </form>
     </div>
