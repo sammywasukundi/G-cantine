@@ -87,7 +87,7 @@
                 class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Biens</a>
             </li>
             <li>
-              <a href="customer.php"
+              <a href="intervenant.php"
                 class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Intervenants</a>
             </li>
             <li>
