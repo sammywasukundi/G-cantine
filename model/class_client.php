@@ -59,7 +59,7 @@ class Client
     // Méthode pour supprimer un client
     public function delete_client()
     {
-        require('./dbconnexion.php');
+        require './dbconnexion.php';
         $DB = new DB();
 
         // Suppression du client de la base de données
