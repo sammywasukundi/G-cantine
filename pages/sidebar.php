@@ -118,14 +118,10 @@
               <a href="stock.php"
                 class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Stock</a>
             </li>
-            <!-- <li>
-              <a href="eventaire.php"
-                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Eventaire</a>
-            </li>
             <li>
-              <a href="etat_besoin.php"
-                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Etat de besoin</a>
-            </li> -->
+              <a href="produit.php"
+                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Produit</a>
+            </li>
           </ul>
         </li>
         <li>

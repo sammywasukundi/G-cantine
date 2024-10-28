@@ -35,9 +35,9 @@ require 'sidebar.php';
                         class="inline-block text-green-500 w-full p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Fourniture</button>
                 </li>
                 <li class="w-full">
-                    <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about"
+                    <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq"
                         aria-selected="false"
-                        class="inline-block text-green-500 w-full p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Retour</button>
+                        class="inline-block w-full p-4 rounded-se-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Retour</button>
                 </li>
             </ul>
             <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
@@ -330,87 +330,133 @@ require 'sidebar.php';
                     <div id="accordion-flush" data-accordion="collapse"
                         data-active-classes="bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                         data-inactive-classes="text-gray-500 dark:text-gray-400">
-                        <h2 id="accordion-flush-heading-1">
-                            <button type="button"
-                                class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
-                                data-accordion-target="#accordion-flush-body-1" aria-expanded="true"
-                                aria-controls="accordion-flush-body-1">
-                                <span>What is Flowbite?</span>
-                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
-                                </svg>
-                            </button>
-                        </h2>
-                        <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
-                            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of
-                                    interactive components built on top of Tailwind CSS including buttons, dropdowns,
-                                    modals, navbars, and more.</p>
-                                <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a
-                                        href="/docs/getting-started/introduction/"
-                                        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and
-                                    start developing websites even faster with components on top of Tailwind CSS.</p>
+                        <div class="flex justify-between">
+                            <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Ajouter un detail de retour
+                                des biens</h2>
+                            <div>
+                                <button data-modal-target="modal_ref_retour"
+                                    data-modal-toggle="modal_ref_retour"
+                                    class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                                    type="button">
+                                    Ajouter une réference de retour des biens
+                                </button>
                             </div>
+                            <!-- mon modal pour la réference ici -->
+
                         </div>
-                        <h2 id="accordion-flush-heading-2">
-                            <button type="button"
-                                class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
-                                data-accordion-target="#accordion-flush-body-2" aria-expanded="false"
-                                aria-controls="accordion-flush-body-2">
-                                <span>Is there a Figma file available?</span>
-                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
-                                </svg>
-                            </button>
-                        </h2>
-                        <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
-                            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and
-                                    designed using the Figma software so everything you see in the library has a design
-                                    equivalent in our Figma file.</p>
-                                <p class="text-gray-500 dark:text-gray-400">Check out the <a
-                                        href="https://flowbite.com/figma/"
-                                        class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a>
-                                    based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                        <form action="stock.php" method="post" enctype="multipart/form-data" class="mt-6">
+                            <div class="grid gap-4 mb-4 grid-cols-2">
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label for="id_refRetourBien"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sélectionnez
+                                        une réference de retour des biens</label>
+                                    <select id="id_refRetourBien" name="id_refRetourBien"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                        <option value="TV">Ref retour</option>
+                                        <option value="PC">Ref retour</option>
+                                        <option value="GA">retour</option>
+                                    </select>
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label for="idProduit"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sélectionnez
+                                        un
+                                        produit</label>
+                                    <select id="idProduit" name="idProduit"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                        <option value="TV">Jeanpie</option>
+                                        <option value="PC">Sammy</option>
+                                        <option value="GA">Jp/Console</option>
+                                    </select>
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label for="quantite"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantité</label>
+                                    <input type="number" name="quantite" id="quantite"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        required="">
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label for="uniteQte"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">unité de la
+                                        quantité</label>
+                                    <input type="number" name="uniteQte" id="uniteQte"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                        required="">
+                                </div>
                             </div>
-                        </div>
-                        <h2 id="accordion-flush-heading-3">
-                            <button type="button"
-                                class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
-                                data-accordion-target="#accordion-flush-body-3" aria-expanded="false"
-                                aria-controls="accordion-flush-body-3">
-                                <span>What are the differences between Flowbite and Tailwind UI?</span>
-                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M9 5 5 1 1 5" />
-                                </svg>
+                            <button name="submit_detail_retour" type="submit"
+                                class="items-center px-3 py-2 mt-4 w-full sm:mt-6 text-sm font-medium text-center text-white rounded-md bg-green-500 hover:bg-green-600">
+                                Ajouter la réference de retour des biens
                             </button>
-                        </h2>
-                        <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
-                            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core
-                                    components from Flowbite are open source under the MIT license, whereas Tailwind UI
-                                    is a paid product. Another difference is that Flowbite relies on smaller and
-                                    standalone components, whereas Tailwind UI offers sections of pages.</p>
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using
-                                    both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason
-                                    stopping you from using the best of two worlds.</p>
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:
-                                </p>
-                                <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                                    <li><a href="https://flowbite.com/pro/"
-                                            class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a>
-                                    </li>
-                                    <li><a href="https://tailwindui.com/" rel="nofollow"
-                                            class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        </form>
+
+
+                        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                            <table
+                                class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mt-6">
+                                <thead
+                                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3">
+                                            Réference de retour des biens
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Produit
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Quantité
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            unité de la
+                                            quantité
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Action
+                                        </th>
+                                        <th scope="col" class="px-6 py-3">
+                                            Action
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <td class="px-6 py-4">
+                                            Silver
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            Laptop
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            Silver
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            Laptop
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <a href="stock.php"
+                                                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="w-9 h-9 text-green-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                                                </svg>
+                                            </a>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <a href="#"
+                                                class="font-medium text-red-600 dark:text-red-500 hover:underline"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor"
+                                                    class="w-9 h-9 text-red-500">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                                </svg>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -419,6 +465,12 @@ require 'sidebar.php';
 
     </div>
 </section>
+
+
+
+
+
+
 
 
 
@@ -545,3 +597,65 @@ require 'sidebar.php';
     </div>
 </div>
 <!-- mon modal pour la réference a une fourniture ici -->
+
+
+
+<!-- Main modal pour ajouter une réference a une acquisition-->
+<div id="modal_ref_retour" tabindex="-1" aria-hidden="true"
+    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    Ajouter une réference de retour des biens
+                </h3>
+                <button type="button"
+                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 bg-green-500 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    data-modal-toggle="modal_ref_retour">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <form class="p-4 md:p-5" method="post" action="stock.php">
+                <div class="grid gap-4 mb-4 grid-cols-2">
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="category"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sélectionnez un
+                            departement</label>
+                        <select id="IdDepartement" name="IdDepartement"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                            <option value="TV">Jeanpie</option>
+                            <option value="PC">Sammy</option>
+                            <option value="GA">Jp/Console</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="date_Retour" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date de
+                            retour</label>
+                        <input type="date" name="date_Retour" id="date_Retour"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            required="">
+                    </div>
+                </div>
+                <button type="submit" name="submitRefRetour"
+                    class="text-white inline-flex items-center bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                    <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    Ajouter une réference de retour
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- mon modal pour la réference de l'acquisition ici -->

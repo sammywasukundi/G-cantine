@@ -5,18 +5,9 @@ require 'sidebar.php';
 <div class="p-4 sm:ml-64">
     <div class="p-4 border-2 border-gray-200 border-none rounded-lg space-y-6">
         <div class="flex min-h-screen items-center justify-center text-2xl font-bold h-48 mb-4 rounded">
-            <div class="block items-center justify-center space-y-3">
-                <div class="flex justify-center text-center">
-                    <ion-icon name="logo-skype"
-                        class="w-14 h-14 md:w-8 md:h-8 lg:w-10 lg:h-10 md:block me-2 text-gray-700"></ion-icon>
-                    <ion-icon name="logo-xing"
-                        class="w-14 h-14 md:w-8 md:h-8 lg:w-10 lg:h-10 md:block me-2 text-gray-700"></ion-icon>
-                </div>
-
-                <p class="text-xl font-semibold text-center text-gray-800 sm:text-xl md:text-2xl lg:text-3xl">
-                    Avec cette application , gérez l'intendance de L'UNILUK
-                </p>
-            </div>
+            <p class="text-4xl font-semibold text-center text-gray-800 sm:text-xl md:text-2xl lg:text-3xl">
+                Avec cette application , gérez l'intendance de L'UNILUK
+            </p>
         </div>
         <div class="flex items-center justify-center h-48 rounded">
             <div class="inline-flex rounded-md shadow-sm items-center mb-8" role="group">
