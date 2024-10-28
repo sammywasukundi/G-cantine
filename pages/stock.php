@@ -325,133 +325,93 @@ require 'sidebar.php';
                         </table>
                     </div>
                 </div>
-                <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel"
-                    aria-labelledby="stats-tab">
-                    <div class="flex justify-between">
-                        <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Detail de retour des biens</h2>
-                        <div>
-                            <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                                class="block text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                                type="button">
-                                Ajouter une réference de retour des biens
+                <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="faq" role="tabpanel"
+                    aria-labelledby="faq-tab">
+                    <div id="accordion-flush" data-accordion="collapse"
+                        data-active-classes="bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                        data-inactive-classes="text-gray-500 dark:text-gray-400">
+                        <h2 id="accordion-flush-heading-1">
+                            <button type="button"
+                                class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+                                data-accordion-target="#accordion-flush-body-1" aria-expanded="true"
+                                aria-controls="accordion-flush-body-1">
+                                <span>What is Flowbite?</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                </svg>
                             </button>
-                        </div>
-                        <!-- mon modal pour la réference ici -->
-
-
-                    </div>
-                    <form action="stock.php" method="post" enctype="multipart/form-data" class="mt-6">
-                        <div class="grid gap-4 mb-4 grid-cols-2">
-                            <div class="col-span-2 sm:col-span-1">
-                                <label for="idProduit"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sélectionnez un
-                                    produit</label>
-                                <select id="idProduit" name="idProduit"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                                    <option value="TV">Jeanpie</option>
-                                    <option value="PC">Sammy</option>
-                                    <option value="GA">Jp/Console</option>
-                                </select>
-                            </div>
-                            <div class="col-span-2 sm:col-span-1">
-                                <label for="quantite"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantité</label>
-                                <input type="number" name="quantite" id="quantite"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    required="">
-                            </div>
-                            <div class="col-span-2 sm:col-span-1">
-                                <label for="uniteQte"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">unité de la
-                                    quantité</label>
-                                <input type="number" name="uniteQte" id="uniteQte"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    required="">
-                            </div>
-                            <div class="col-span-2 sm:col-span-1">
-                                <label for="Prix_achat"
-                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prix
-                                    d'achat</label>
-                                <input type="number" name="Prix_achat" id="Prix_achat"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    required="">
+                        </h2>
+                        <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+                            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of
+                                    interactive components built on top of Tailwind CSS including buttons, dropdowns,
+                                    modals, navbars, and more.</p>
+                                <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a
+                                        href="/docs/getting-started/introduction/"
+                                        class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and
+                                    start developing websites even faster with components on top of Tailwind CSS.</p>
                             </div>
                         </div>
-                        <button name="submit_supplier" type="submit"
-                            class="items-center px-3 py-2 mt-4 w-full sm:mt-6 text-sm font-medium text-center text-white rounded-md bg-green-500 hover:bg-green-600">
-                            Ajouter l'acquisition
-                        </button>
-                    </form>
-                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-6">
-                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                                <tr>
-                                    <th scope="col" class="px-6 py-3">
-                                        réference d'acquisition
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        produit
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Quantité
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        unité de la
-                                        quantité
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Prix
-                                        d'achat
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Action
-                                    </th>
-                                    <th scope="col" class="px-6 py-3">
-                                        Action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                    <th scope="row"
-                                        class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Apple MacBook Pro 17"
-                                    </th>
-                                    <td class="px-6 py-4">
-                                        Silver
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Laptop
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Silver
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Laptop
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="intervenant.php"
-                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><svg
-                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-9 h-9 text-green-500">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                            </svg>
-                                        </a>
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        <a href="#"
-                                            class="font-medium text-red-600 dark:text-red-500 hover:underline"><svg
-                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" class="w-9 h-9 text-red-500">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
-                                            </svg>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <h2 id="accordion-flush-heading-2">
+                            <button type="button"
+                                class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+                                data-accordion-target="#accordion-flush-body-2" aria-expanded="false"
+                                aria-controls="accordion-flush-body-2">
+                                <span>Is there a Figma file available?</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+                            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and
+                                    designed using the Figma software so everything you see in the library has a design
+                                    equivalent in our Figma file.</p>
+                                <p class="text-gray-500 dark:text-gray-400">Check out the <a
+                                        href="https://flowbite.com/figma/"
+                                        class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a>
+                                    based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                            </div>
+                        </div>
+                        <h2 id="accordion-flush-heading-3">
+                            <button type="button"
+                                class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+                                data-accordion-target="#accordion-flush-body-3" aria-expanded="false"
+                                aria-controls="accordion-flush-body-3">
+                                <span>What are the differences between Flowbite and Tailwind UI?</span>
+                                <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M9 5 5 1 1 5" />
+                                </svg>
+                            </button>
+                        </h2>
+                        <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
+                            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core
+                                    components from Flowbite are open source under the MIT license, whereas Tailwind UI
+                                    is a paid product. Another difference is that Flowbite relies on smaller and
+                                    standalone components, whereas Tailwind UI offers sections of pages.</p>
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using
+                                    both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason
+                                    stopping you from using the best of two worlds.</p>
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:
+                                </p>
+                                <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+                                    <li><a href="https://flowbite.com/pro/"
+                                            class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a>
+                                    </li>
+                                    <li><a href="https://tailwindui.com/" rel="nofollow"
+                                            class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
